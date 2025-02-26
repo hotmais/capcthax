@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<!-- Mirrored from jverify.store/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 05 Feb 2025 03:06:15 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proteção de Acesso</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f1f3f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            width: 100%;
+            max-width: 360px;
+            padding: 20px;
+            background: #ffffff;
+            border: 1px solid #dcdcdc;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .header span {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #333333;
+        }
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+        .checkbox-container input[type="checkbox"] {
+            width: 24px;
+            height: 24px;
+            accent-color: #4285f4;
+            cursor: pointer;
+        }
+        .checkbox-container label {
+            font-size: 1.1rem;
+            color: #333333;
+            margin-right: auto;
+            margin-left: 10px;
+        }
+        .checkbox-container img {
+            width: 50px; /* Aumentado o tamanho da imagem */
+            height: 50px; /* Aumentado o tamanho da imagem */
+        }
+        button {
+            width: 100%;
+            padding: 14px;
+            font-size: 1.2rem;
+            font-weight: 500;
+            background-color: #4285f4;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        button:hover {
+            background-color: #357ae8;
+            transform: translateY(-2px);
+        }
+        button:active {
+            transform: translateY(0);
+        }
+        .error {
+            display: none;
+            font-size: 0.95rem;
+            color: #d93025;
+            margin-top: 15px;
+        }
+        .footer {
+            margin-top: 25px;
+            font-size: 0.85rem;
+            color: #70757a;
+            line-height: 1.4;
+        }
+        .footer a {
+            color: #4285f4;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        /* Responsividade */
+        @media (max-width: 480px) {
+            .header span {
+                font-size: 1.2rem;
+            }
+            .checkbox-container label {
+                font-size: 1rem;
+            }
+            button {
+                font-size: 1rem;
+                padding: 12px;
+            }
+            .footer {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+    <script>
+        function onSubmit(event) {
+            event.preventDefault();
+
+            const checkbox = document.getElementById("robotCheck");
+            const errorMessage = document.getElementById("errorMessage");
+
+            if (!checkbox.checked) {
+                errorMessage.style.display = "block";
+                return;
+            }
+
+            // Redireciona para a próxima página
+            window.location.href = "redirect/index.html";
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <span>reCAPTCHA</span>
+        </div>
+        <form id="checkboxForm" method="POST" onsubmit="onSubmit(event)">
+            <div class="checkbox-container">
+                <input type="checkbox" id="robotCheck" name="robotCheck" required>
+                <label for="robotCheck">Não sou um robô</label>
+                <img src="../res.cloudinary.com/duiihesmx/image/upload/v1734664822/RecaptchaLogo.svg_jm7hkd.png" alt="reCAPTCHA Icon">
+            </div>
+            <button type="submit">Verificar</button>
+            <p id="errorMessage" class="error">Você precisa marcar a caixa para continuar.</p>
+        </form>
+        <div class="footer">
+            Este site é protegido pelo reCAPTCHA. Consulte a <a href="politica-de-privacidade/index.html">Política de Privacidade</a> e os <a href="termos-de-uso/index.html">Termos de Serviço</a>.
+        </div>
+    </div>
+</body>
+
+<!-- Mirrored from jverify.store/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 05 Feb 2025 03:06:17 GMT -->
+</html>
